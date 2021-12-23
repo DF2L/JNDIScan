@@ -34,7 +34,7 @@
 - 根据检测结果动态生成`HTML`页面
 - 检测当前内网和外网的IP打印可用的`Payload`
 
-![](https://github.com/EmYiQing/JNDIScan/blob/main/img/001.png)
+![](https://github.com/EmYiQing/JNDIScan/blob/master/img/001.png)
 
 ## 使用
 
@@ -42,7 +42,7 @@
 
 如果目标存在漏洞，该项目就会收到`ldap/rmi`请求，从而快速定位哪些目标存在漏洞
 
-![](https://github.com/EmYiQing/JNDIScan/blob/main/img/002.png)
+![](https://github.com/EmYiQing/JNDIScan/blob/master/img/002.png)
 
 命令：`./JNDIScan -p port(默认8001)`
 

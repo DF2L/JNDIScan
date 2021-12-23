@@ -34,7 +34,7 @@
 - 根据检测结果动态生成`HTML`页面
 - 检测当前内网和外网的IP打印可用的`Payload`
 
-![](https://github.com/EmYiQing/JNDIScan/blob/master/img/001.png)
+![](https://github.com/EmYiQing/JNDIScan/blob/master/img/01.png)
 
 ## 使用
 
@@ -42,7 +42,7 @@
 
 如果目标存在漏洞，该项目就会收到`ldap/rmi`请求，从而快速定位哪些目标存在漏洞
 
-![](https://github.com/EmYiQing/JNDIScan/blob/master/img/002.png)
+![](https://github.com/EmYiQing/JNDIScan/blob/master/img/02.png)
 
 命令：`./JNDIScan -p port(默认8001)`
 
@@ -56,11 +56,9 @@
 [+] [11:55:41] use port: 8001
 [+] [11:55:41] start fake reverse server
 |-------------------------------------------|
-|--Payload: ldap://169.254.4.195:8001-------|
 |--Payload: ldap://192.168.1.4:8001---------|
 |--Payload: ldap://127.0.0.1:8001-----------|
 |--Payload: ldap://your-ip:8001-------------|
-|--Payload: rmi://169.254.4.195:8001/xxx----|
 |--Payload: rmi://192.168.1.4:8001/xxx------|
 |--Payload: rmi://127.0.0.1:8001/xxx--------|
 |--Payload: rmi://your-ip:8001/xxx----------|

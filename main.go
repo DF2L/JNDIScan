@@ -44,6 +44,7 @@ func startApp() {
 				Host:   res.Host,
 				Name:   res.Name,
 				Finger: res.Finger,
+				Path:   res.Path,
 			}
 			RenderChan <- data
 		}

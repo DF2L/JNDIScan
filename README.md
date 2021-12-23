@@ -33,6 +33,7 @@
 - 完全无害，不存在任何`Payload`仅基于`LDAP`和`RMI`协议检测
 - 根据检测结果动态生成`HTML`页面
 - 检测当前内网和外网的IP打印可用的`Payload`
+- 支持在路径中带出参数（方便批量扫描）
 
 ![](https://github.com/EmYiQing/JNDIScan/blob/master/img/01.png)
 
@@ -69,6 +70,8 @@
 只需要将`Payload`设置为输出的这些之一
 
 即可在命令行看到连接结果，当前目录的`result.html`是动态渲染后的`HTML`页面
+
+如果想带出参数，直接加入即可：`ldap://127.0.0.1:8001/PARAMS`
 
 ## 其他
 

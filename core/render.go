@@ -19,7 +19,11 @@ func RenderHtml(resultList []*model.Result) []byte {
 			"<td>%s</td>\n        "+
 			"<td><span class=\"badge badge-danger\">%s</span></td>\n        "+
 			"<td><span class=\"badge badge-warning\">%s</span></td>\n    "+
-			"</tr>", i, (resultList[i-1]).Host, (resultList[i-1]).Name, (resultList[i-1]).Finger)))
+			"<td><span class=\"badge badge-success\">%s</span></td>\n    "+
+			"</tr>", i, (resultList[i-1]).Host,
+			(resultList[i-1]).Name,
+			(resultList[i-1]).Finger,
+			(resultList[i-1]).Path)))
 	}
 	data.Write([]byte(config.TemplateSuffix))
 	return data.Bytes()

@@ -1,6 +1,7 @@
 package core
 
 import (
+	"bytes"
 	"fmt"
 	"github.com/EmYiQing/JNDIScan/config"
 	"github.com/EmYiQing/JNDIScan/log"
@@ -41,10 +42,24 @@ func acceptProcess(conn *net.Conn) {
 	hexStr := fmt.Sprintf("%x", buf[:num])
 	// LDAP Protocol
 	if "300c020101600702010304008000" == hexStr {
+		data := []byte{
+			0x30, 0x0c, 0x02, 0x01, 0x01, 0x61, 0x07,
+			0x0a, 0x01, 0x00, 0x04, 0x00, 0x04, 0x00,
+		}
+		_, _ = (*conn).Write(data)
+		_, _ = (*conn).Read(buf)
+		length := buf[8]
+		pathBytes := bytes.Buffer{}
+		for i := 1; i <= int(length); i++ {
+			temp := []byte{buf[8+i]}
+			pathBytes.Write(temp)
+		}
+		path := pathBytes.String()
 		res := &model.Result{
 			Host:   (*conn).RemoteAddr().String(),
 			Name:   "LDAP",
 			Finger: hexStr,
+			Path:   path,
 		}
 		ResultChan <- res
 		_ = (*conn).Close()
